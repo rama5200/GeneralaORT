@@ -4,7 +4,7 @@ const {Schema} = mongoose;
 
 
 const userSchema = new Schema({
-    email: String,
+    email: String ,
     password: String,
 });
 
@@ -18,4 +18,4 @@ userSchema.methods.comparePass = function (password){
     return bcrypt.compareSync(password, this.password); //devuelve boolean de la comparacion de la contraseña
 };
 
-module.exports = mongoose.model('users',userSchema);
+module.exports = mongoose.model('user',userSchema);

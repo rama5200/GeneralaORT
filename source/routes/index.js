@@ -12,22 +12,25 @@ router.get('/', function (req,res,next){
 router.get('/signup',function (req,res,next){
     res.render('signup');
 });
-/*
-router.post('/signup',function(req,res,next){
-    //res.render('lobby');
-    console.log(req.body);
-    res.redirect('/lobby');
-});
-*/
 
 router.post('/signup', passport.authenticate('localsignup' ,{
     successRedirect: '/lobby',
-    failureRedirect: '/',
+    failureRedirect: '/signup',
     passReqToCallback: true
 }));
 
 router.get('/lobby',function(req,res,next){
     res.render('lobby');
 });
+
+router.get('/signin', function(req,res,next){
+    res.render('signin');
+})
+
+router.post('/signin',passport.authenticate('localsignin' ,{
+    successRedirect: '/lobby',
+    failureRedirect: '/signin',
+    passReqToCallback: true
+}));
 
 module.exports = router;

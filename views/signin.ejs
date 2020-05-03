@@ -9,17 +9,17 @@
     <script src='main.js'></script>
 </head>
 <body>
-
-<% if (signupMessage) { %>
+    <% if (signinMessage) { %>
   
-<div><%= signupMessage %></div>
-    
-<% } %>
-    <h2>ESTA ES LA PAGINA DE REGISTR0</h2>
-    <form action = "/signup" method="POST">
+        <div><%= signinMessage %></div>
+            
+        <% } %>
+
+    <h2>ESTA ES LA PAGINA DE inicio de Sesion</h2>
+    <form action = "/signin" method="POST">
         <input type="email" name="email" placeholder="Ingrese su Mail">
         <input type="password" name="password" placeholder="Ingrese su Contraseña">
-        <button type="submit">Registrarse</button>
+        <button type="submit">Iniciar Sesion</button>
     </form>
 </body>
 </html>
